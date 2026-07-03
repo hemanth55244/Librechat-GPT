@@ -1,0 +1,31 @@
+**/.circleci
+**/.editorconfig
+**/.dockerignore
+**/.git
+**/.DS_Store
+**/.vscode
+**/node_modules
+
+# Specific patterns to ignore
+data-node
+meili_data*
+librechat*
+Dockerfile*
+docs
+
+# Ignore all hidden files
+.*
+
+# Secrets and local-only config
+.env
+.env.*
+!.env.example
+!.env.production.example
+*.pem
+*.key
+*.cert
+my.secrets
+auth.json
+cache.json
+docker-compose.override.yml
+docker-compose.override.yaml

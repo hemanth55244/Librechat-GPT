@@ -1,0 +1,110 @@
+services:
+  - type: web
+    name: librechat-gpt-api
+    runtime: docker
+    plan: free
+    repo: https://github.com/hemanth55244/Librechat-GPT.git
+    branch: main
+    dockerfilePath: ./Dockerfile.multi
+    dockerContext: .
+    healthCheckPath: /health
+    autoDeployTrigger: commit
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: APP_NAME
+        value: LibreChat
+      - key: APP_TITLE
+        value: LibreChat
+      - key: APP_BRAND_NAME
+        value: LibreChat
+      - key: DOMAIN_SERVER
+        value: https://librechat-gpt.onrender.com
+      - key: DOMAIN_CLIENT
+        value: https://librechat-gpt.vercel.app
+      - key: ALLOW_EMAIL_LOGIN
+        value: true
+      - key: ALLOW_REGISTRATION
+        value: true
+      - key: ALLOW_SOCIAL_LOGIN
+        value: true
+      - key: ALLOW_SOCIAL_REGISTRATION
+        value: true
+      - key: ALLOW_UNVERIFIED_EMAIL_LOGIN
+        value: false
+      - key: GOOGLE_CALLBACK_URL
+        value: /oauth/google/callback
+      - key: RAG_API_URL
+        value: https://librechat-rag-api.onrender.com
+      - key: CONFIG_PATH
+        value: /app/config/librechat.render.yaml
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_REFRESH_SECRET
+        sync: false
+      - key: CREDS_KEY
+        sync: false
+      - key: CREDS_IV
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: GITHUB_CLIENT_ID
+        sync: false
+      - key: GITHUB_CLIENT_SECRET
+        sync: false
+      - key: EMAIL_HOST
+        sync: false
+      - key: EMAIL_PORT
+        sync: false
+      - key: EMAIL_ENCRYPTION
+        sync: false
+      - key: EMAIL_USERNAME
+        sync: false
+      - key: EMAIL_PASSWORD
+        sync: false
+      - key: EMAIL_FROM_NAME
+        value: LibreChat
+      - key: EMAIL_FROM
+        sync: false
+
+  - type: web
+    name: librechat-rag-api
+    runtime: docker
+    plan: free
+    repo: https://github.com/danny-avila/rag_api.git
+    branch: main
+    dockerfilePath: ./Dockerfile.lite
+    dockerContext: .
+    healthCheckPath: /health
+    autoDeployTrigger: off
+    envVars:
+      - key: RAG_HOST
+        value: 0.0.0.0
+      - key: RAG_PORT
+        value: 10000
+      - key: VECTOR_DB_TYPE
+        value: atlas-mongo
+      - key: ATLAS_SEARCH_INDEX
+        value: vector_index
+      - key: COLLECTION_NAME
+        value: rag_chunks
+      - key: EMBEDDINGS_PROVIDER
+        value: google_genai
+      - key: EMBEDDINGS_MODEL
+        value: gemini-embedding-001
+      - key: ATLAS_MONGO_DB_URI
+        sync: false
+      - key: RAG_GOOGLE_API_KEY
+        sync: false
+      - key: JWT_SECRET
+        sync: false

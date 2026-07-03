@@ -1,0 +1,18 @@
+version: 1.2.8
+
+endpoints:
+  custom:
+    - name: 'groq'
+      apiKey: '${GROQ_API_KEY}'
+      baseURL: 'https://api.groq.com/openai/v1/'
+      models:
+        default:
+          - 'llama-3.1-8b-instant'
+          - 'llama-3.3-70b-versatile'
+          - 'openai/gpt-oss-120b'
+          - 'openai/gpt-oss-20b'
+          - 'groq/compound-mini'
+        fetch: true
+      titleConvo: true
+      titleModel: 'llama-3.1-8b-instant'
+      modelDisplayLabel: 'Groq'
