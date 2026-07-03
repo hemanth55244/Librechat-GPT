@@ -1,0 +1,14 @@
+# Exclude the root api folder's code to prevent Vercel from building it as Serverless Functions,
+# but keep package.json and jsconfig.json so npm workspaces do not break during installation.
+api/app
+api/cache
+api/config
+api/db
+api/logs
+api/models
+api/server
+api/strategies
+api/test
+api/typedefs.js
+api/jest.config.js
+api/utils
