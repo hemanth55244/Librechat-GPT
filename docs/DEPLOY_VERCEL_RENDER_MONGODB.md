@@ -82,7 +82,13 @@ https://librechat-gpt.onrender.com
 
 If Render gives a different URL in a future deployment, update `DOMAIN_SERVER` in Render and update `vercel.json` rewrites before pushing again.
 
-If the RAG service URL is different from `https://librechat-rag-api.onrender.com`, update `RAG_API_URL` on the `librechat-gpt-api` Render service.
+Your current RAG service URL is:
+
+```text
+https://librechat-rag-for-own.onrender.com
+```
+
+Set `RAG_API_URL` on the `librechat-gpt-api` Render service to that URL.
 
 ## 4. Enable MongoDB Atlas Vector Search for RAG
 

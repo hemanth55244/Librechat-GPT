@@ -37,7 +37,7 @@ services:
       - key: GOOGLE_CALLBACK_URL
         value: /oauth/google/callback
       - key: RAG_API_URL
-        value: https://librechat-rag-api.onrender.com
+        value: https://librechat-rag-for-own.onrender.com
       - key: CONFIG_PATH
         value: /app/config/librechat.render.yaml
       - key: MONGO_URI
