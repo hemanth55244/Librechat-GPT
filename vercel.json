@@ -7,15 +7,15 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://librechat-gpt.onrender.com/api/:path*"
+      "destination": "https://librechat-gpt-api.onrender.com/api/:path*"
     },
     {
       "source": "/oauth/:path*",
-      "destination": "https://librechat-gpt.onrender.com/oauth/:path*"
+      "destination": "https://librechat-gpt-api.onrender.com/oauth/:path*"
     },
     {
       "source": "/health",
-      "destination": "https://librechat-gpt.onrender.com/health"
+      "destination": "https://librechat-gpt-api.onrender.com/health"
     },
     {
       "source": "/((?!assets/|images/|manifest.webmanifest|sw.js|sw-heal.js|favicon.ico).*)",

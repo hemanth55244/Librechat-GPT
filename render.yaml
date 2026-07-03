@@ -21,9 +21,9 @@ services:
       - key: APP_BRAND_NAME
         value: LibreChat
       - key: DOMAIN_SERVER
-        value: https://librechat-gpt.onrender.com
+        value: https://librechat-gpt-api.onrender.com
       - key: DOMAIN_CLIENT
-        value: https://librechat-gpt.vercel.app
+        value: https://librechat-gpt-client.vercel.app
       - key: ALLOW_EMAIL_LOGIN
         value: true
       - key: ALLOW_REGISTRATION
@@ -37,7 +37,7 @@ services:
       - key: GOOGLE_CALLBACK_URL
         value: /oauth/google/callback
       - key: RAG_API_URL
-        value: https://librechat-rag-for-own.onrender.com
+        value: https://librechat-rag-api.onrender.com
       - key: CONFIG_PATH
         value: /app/config/librechat.render.yaml
       - key: MONGO_URI
